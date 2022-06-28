@@ -15,7 +15,6 @@ inpbtn.addEventListener('click', ()=> {
     task.push(inp.value);
     inp.value='';
     console.log(task);
-    console.log(item);
     textout(task);
     fitem.style.display='none';
   }
@@ -29,13 +28,15 @@ const textout=(arr)=> {
       <p> ${arr[i]}</p>
     </div>
     <div class="todopanel">
-      <button class="todobtn">Del</button>
+      <button class="todobtn de1${i+1}">Удалить</button>
     </div>
   </div>`
 
   }
   out.innerHTML=textarr;
 }
+
+
 
 function allowDrop(ev) {
   ev.preventDefault();
