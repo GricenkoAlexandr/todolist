@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DZ 130622</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <h1>DZ 130622</h1>
+  <div class="wrapper">
+    <h3>ToDo list</h3>
+    <div class="todoinpblock">
+      <input type="text" class="todoinp">
+      <button class="todoinpbtn">Добавить задачу</button>
+    </div>
+    <div class="todoblock">
+      <div class="firstitem">
+      <div class="todoitem" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="todotext">
+          <p>Задачи отсутствуют!</p>
+        </div>
+        <div class="todopanel">
+          <button class="todobtn">Del</button>
+        </div>
+      </div>
+    </div>
+      <div class="outblock">
+        
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
