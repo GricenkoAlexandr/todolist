@@ -2,14 +2,23 @@
 const inp=document.querySelector('.todoinp');
 const inpbtn=document.querySelector('.todoinpbtn');
 const out=document.querySelector('.outblock');
-const del=document.querySelectorAll('.todobtn');
 const fitem=document.querySelector('.firstitem');
 const item=document.querySelectorAll('.todoitem');
+const del=document.querySelectorAll('.todobtn');
+const ft=document.querySelector('.ftext');
 
 let task=[];
 
+/*
+  if(localStorage.getItem('todo')!==undefined) {
+    task=JSON.parse(localStorage.getItem('todo'));
+  }
+*/
+console.log(task);
+
 inpbtn.addEventListener('click', ()=> {
   if (inp.value==='') {
+    ft.innerHTML=' Введите задачу!!!'
     return;
   } else {
     task.push(inp.value);
@@ -17,6 +26,7 @@ inpbtn.addEventListener('click', ()=> {
     console.log(task);
     textout(task);
     fitem.style.display='none';
+
   }
 });
 
@@ -28,20 +38,14 @@ const textout=(arr)=> {
       <p> ${arr[i]}</p>
     </div>
     <div class="todopanel">
-      <button class="todobtn de1${i+1}">Удалить</button>
+      <button class="todobtn">X</button>
     </div>
-  </div>`
-
+  </div>`;
+ 
   }
   out.innerHTML=textarr;
+  localStorage.setItem('todo', JSON.stringify(arr));
 }
-
-
-
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
 
 
 
